@@ -3,8 +3,8 @@ import React from 'react';
 const AppHeader = () => {
     return (
     <div>
-        <h1>Имя</h1>
-        <h2>Фамилия</h2>
+        <p1>Имя</p1>
+        <p2>Фамилия</p2>
     </div>
     )
 };

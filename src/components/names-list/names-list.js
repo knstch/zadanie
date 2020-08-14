@@ -15,9 +15,8 @@ const NamesList = ({names}) => {
         <Table striped bordered hover variant="dark">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Edit</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
                 </tr>
             </thead>
             <tbody>

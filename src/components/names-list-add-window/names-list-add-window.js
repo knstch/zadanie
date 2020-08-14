@@ -1,19 +1,46 @@
-import React from 'react'
-import { Toast, Button } from 'react-bootstrap';
+import React, {useState} from 'react'
+import { Button, Modal, Form } from 'react-bootstrap';
+
 
 const AddWindow = () => {
-    return(
-    <Toast>
-            <Toast.Header>
-                    <img src="holder.js/20x20?text=%20" className="rounded mr-2" alt=""/>
-                    <strong className="mr-auto">Добавить пользователя</strong>
-                </Toast.Header>
-                <Toast.Body>
-                    <Button className='mr-2'>
-                        Добавить!
-                    </Button>
-                </Toast.Body>
-            </Toast>
-    )
+    console.log(1);
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+  
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Добавить пользователя
+        </Button>
+  
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Новый сотрудник</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Form>
+                <Form.Group controlId="formBasicFirstName">
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control type="firstName"/>
+                </Form.Group>
+                <Form.Group controlId="formBasicLastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control type="lastName" />
+                </Form.Group>
+            </Form>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
 };
 export default AddWindow;

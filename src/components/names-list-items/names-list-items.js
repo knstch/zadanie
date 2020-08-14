@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
-import './names-list-items.css'
+import { ListGroup } from 'react-bootstrap';
+import { ButtonGroup } from 'react-bootstrap';
+import { ButtonToolbar } from 'react-bootstrap'; 
+import { Button } from 'react-bootstrap'; 
 
 export default class NamesListItems extends Component {
     constructor (props) {
@@ -21,22 +24,16 @@ export default class NamesListItems extends Component {
               {lastName} = this.props;
 
         return (
-            <li className='app-list-item'>
+            <ListGroup.Item as="li" active>
                 <span className='app-list-item-label'>{firstName}</span>
                 <span className='app-list-item-label'>{lastName}</span>
-                <div>
-                    <button 
-                    onClick={this.onDelete}
-                    type='button'
-                    className='app-list-item'
-                    >Удалить</button>
-                    <button 
-                    onClick={this.onEdit}
-                    type='button'
-                    className='app-list-item'
-                    >Редактировать</button>
-                </div>
-            </li>
+                <ButtonToolbar>
+                    <ButtonGroup className="mr-2">
+                        <Button onClick={this.onDelete}>Удалить</Button>
+                        <Button onClick={this.onEdit}>Редактировать</Button>
+                    </ButtonGroup>
+                </ButtonToolbar>
+            </ListGroup.Item>
         )
     }
 };

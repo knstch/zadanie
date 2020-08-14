@@ -1,7 +1,7 @@
 import React from 'react'
 import AppHeader from '../app-header'
 import NamesList from '../names-list'
-import './app.css'
+import './app.css';
 
 
 

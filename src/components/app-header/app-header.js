@@ -1,12 +1,13 @@
 import React from 'react';
 import './app-header.css';
+import { Card } from 'react-bootstrap';
 
 const AppHeader = () => {
     return (
-    <div className='app-header'>
+    <Card className='app-header'>
         <p1>Имя </p1>
         <p2>Фамилия</p2>
-    </div>
+    </Card>
     )
 };
 

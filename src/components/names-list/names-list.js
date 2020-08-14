@@ -1,23 +1,22 @@
 import React from 'react'
 import NamesListItems from '../names-list-items'
-import './names-list.css';
-
+import { ListGroup } from 'react-bootstrap' 
 
 const NamesList = ({names}) => {
 
     const elements = names.map((item) => {
         const {id, ...itemProps} = item;
         return (
-            <li key={id} className='list-group-item'>
+            <ListGroup.Item variant="dark" as="li" key={id}>
                 <NamesListItems {...itemProps}/>
-            </li>
+            </ListGroup.Item>
         )
     })
 
     return (
-        <ul className='app-list'>
+        <ListGroup horizontal as="ul">
             {elements}
-        </ul>
+        </ListGroup>
     )
 }
 

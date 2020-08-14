@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './names-list-items.css'
 
 export default class NamesListItems extends Component {
     constructor (props) {
@@ -20,12 +21,20 @@ export default class NamesListItems extends Component {
               {lastName} = this.props;
 
         return (
-            <li className='round'>
-                <span>{firstName}</span>
-                <span>{lastName}</span>
+            <li className='app-list-item'>
+                <span className='app-list-item-label'>{firstName}</span>
+                <span className='app-list-item-label'>{lastName}</span>
                 <div>
-                    <button onClick={this.onDelete}>Удалить</button>
-                    <button onClick={this.onEdit}>Редактировать</button>
+                    <button 
+                    onClick={this.onDelete}
+                    type='button'
+                    className='app-list-item'
+                    >Удалить</button>
+                    <button 
+                    onClick={this.onEdit}
+                    type='button'
+                    className='app-list-item'
+                    >Редактировать</button>
                 </div>
             </li>
         )

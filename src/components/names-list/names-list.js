@@ -3,11 +3,20 @@ import NamesListItems from '../names-list-items'
 
 
 
-const NamesList = () => {
+const NamesList = ({names}) => {
+
+    const elements = names.map((item) => {
+        const {id, ...itemProps} = item;
+        return (
+            <li key={id}>
+                <NamesListItems {...itemProps}/>
+            </li>
+        )
+    })
+
     return (
         <ul>
-            <NamesListItems/>
-            <NamesListItems/>
+            {elements}
         </ul>
     )
 }

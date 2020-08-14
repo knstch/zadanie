@@ -16,10 +16,13 @@ export default class NamesListItems extends Component {
     }
 
     render() {
+        const {firstName} = this.props,
+              {lastName} = this.props;
+
         return (
             <li className='round'>
-                <span>Сергей</span>
-                <span>Иванов</span>
+                <span>{firstName}</span>
+                <span>{lastName}</span>
                 <div>
                     <button onClick={this.onDelete}>Удалить</button>
                     <button onClick={this.onEdit}>Редактировать</button>

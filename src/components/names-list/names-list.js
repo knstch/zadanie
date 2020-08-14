@@ -1,6 +1,6 @@
 import React from 'react'
 import NamesListItems from '../names-list-items'
-import { ListGroup } from 'react-bootstrap' 
+import { ListGroup } from 'react-bootstrap';
 
 const NamesList = ({names}) => {
 
@@ -14,7 +14,7 @@ const NamesList = ({names}) => {
     })
 
     return (
-        <ListGroup horizontal as="ul">
+        <ListGroup horizontal as='ul'>
             {elements}
         </ListGroup>
     )

@@ -6,7 +6,6 @@ const EditWindow = ({fstName, lstName}) => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    console.log(fstName);
     return (
       <>
         <Button variant="primary" onClick={handleShow}>

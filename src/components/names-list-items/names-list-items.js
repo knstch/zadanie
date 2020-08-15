@@ -7,13 +7,9 @@ export default class NamesListItems extends Component {
     constructor (props) {
         super(props);
     this.onDelete = this.onDelete.bind(this);
-    this.onEdit = this.onEdit.bind(this);
     };
     onDelete() {
         console.log('del');
-    }
-    onEdit() {
-        console.log(1)
     }
 
     render() {

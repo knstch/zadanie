@@ -7,7 +7,7 @@ const NamesList = ({names}) => {
     const elements = names.map((item) => {
         const {id, ...itemProps} = item;
         return (
-            <NamesListItems {...itemProps} key={id}/>
+            <NamesListItems {...itemProps} key = {id}/>
         )
     })
 

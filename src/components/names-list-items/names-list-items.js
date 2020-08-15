@@ -1,5 +1,7 @@
-import React, {Component} from 'react';
-import { Button, ButtonGroup  } from 'react-bootstrap';
+import React, {Component } from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import EditWindow from '../edit-window';
+
 
 export default class NamesListItems extends Component {
     constructor (props) {
@@ -7,13 +9,11 @@ export default class NamesListItems extends Component {
     this.onDelete = this.onDelete.bind(this);
     this.onEdit = this.onEdit.bind(this);
     };
-
     onDelete() {
         console.log('del');
     }
-
     onEdit() {
-        console.log('edit');
+        console.log(1)
     }
 
     render() {
@@ -31,7 +31,7 @@ export default class NamesListItems extends Component {
                 <td>
                     <ButtonGroup className='mr-2'>
                         <Button onClick={this.onDelete}>Удалить</Button>
-                        <Button onClick={this.onEdit}>Редактировать</Button>
+                        <EditWindow fstName = {firstName} lstName = {lastName}/>
                     </ButtonGroup>
                 </td>    
             </tr>

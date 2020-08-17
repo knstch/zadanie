@@ -3,9 +3,8 @@ import { Button, Modal } from 'react-bootstrap';
 import EditModal from '../edit-modal';
 
 
-const EditWindow = ({id}) => {
+const EditWindow = ({id, firstName, lastName}) => {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
@@ -19,7 +18,7 @@ const EditWindow = ({id}) => {
             <Modal.Title>Редактировать данные</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <EditModal id = {id}/>
+            <EditModal id = {id} firstName = {firstName} lastName = {lastName}/>
           </Modal.Body>
         </Modal>
       </>

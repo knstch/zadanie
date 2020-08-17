@@ -9,7 +9,7 @@ export default class AddWindow extends Component {
   }
   
   handleChangeName = e => {
-    this.setState({ firstName: e.target.value });
+      this.setState({ firstName: e.target.value });
   }
 
   handleChangeSurname = e => {
@@ -17,11 +17,18 @@ export default class AddWindow extends Component {
   }
 
   handleSubmit = e => {
-
-    axios.post('http://localhost:3004/names', { firstName: this.state.firstName, lastName: this.state.lastName })
-    .then(res => { console.log(res);
-                   console.log(res.data);
-    })             
+    if (this.state.firstName.length > 15 || this.state.lastName.length > 15) {
+      alert ('Введите нормальное имя или фамилию');
+      e.preventDefault();
+    } else if (this.state.firstName === '' || this.state.lastName === '') {
+      alert ('Введите нормальное имя или фамилию');
+      e.preventDefault();
+    } else {
+        axios.post('http://localhost:3004/names', { firstName: this.state.firstName, lastName: this.state.lastName })
+        .then(res => { console.log(res);
+                      console.log(res.data);
+        })
+    }          
   }
   
   render() {

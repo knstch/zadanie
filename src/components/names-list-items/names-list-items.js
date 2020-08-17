@@ -11,14 +11,13 @@ export default class NamesListItems extends Component {
         super(props);
     this.onDelete = this.onDelete.bind(this);
     };
-    componentDidMount () {
-        axios.get(`http://localhost:3004/names`)
+    async componentDidMount () {
+        await axios.get(`http://localhost:3004/names`)
         .then(res => {
             this.setState({ persons: res.data });
         })
     }
     onDelete = e => {
-        console.log(e);
         axios.delete(`http://localhost:3004/names/${e}`)
         window.location.reload(false);
     }
@@ -30,7 +29,7 @@ export default class NamesListItems extends Component {
                 <td>
                     <ButtonGroup className='mr-2'>
                         <Button onClick={ () => this.onDelete(persons.id) }>Удалить</Button>
-                        <EditWindow id = {persons.id}/>
+                        <EditWindow id = {persons.id} firstName = {persons.firstName} lastName = {persons.lastName}/>
                     </ButtonGroup>
                 </td>
                 </tr>)

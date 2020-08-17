@@ -22,7 +22,6 @@ export default class NamesListItems extends Component {
         axios.delete(`http://localhost:3004/names/${e}`)
         window.location.reload(false);
     }
-
     render() {
         return (
             this.state.persons.map(persons =><tr id = { persons.id } key = { persons.id }>

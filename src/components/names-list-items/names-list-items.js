@@ -31,7 +31,7 @@ export default class NamesListItems extends Component {
                 <td>
                     <ButtonGroup className='mr-2'>
                         <Button onClick={ () => this.onDelete(persons.id) }>Удалить</Button>
-                        <EditWindow fstName = {persons.firstName} lstName = {persons.lastName}/>
+                        <EditWindow id = {persons.id}/>
                     </ButtonGroup>
                 </td>
                 </tr>)

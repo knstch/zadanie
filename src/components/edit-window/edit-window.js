@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
+import EditModal from '../edit-modal';
 
-const EditWindow = ({fstName, lstName}) => {
+
+const EditWindow = ({id}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -17,25 +19,8 @@ const EditWindow = ({fstName, lstName}) => {
             <Modal.Title>Редактировать данные</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
-                <Form.Group controlId="formBasicFirstName">
-                    <Form.Label>Имя</Form.Label>
-                    <Form.Control type="fstName" placeholder={fstName}/>
-                </Form.Group>
-                <Form.Group controlId="formBasicLastName">
-                    <Form.Label>Фамилия</Form.Label>
-                    <Form.Control type="lastName" placeholder={lstName} />
-                </Form.Group>
-            </Form>
+            <EditModal id = {id}/>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Закрыть
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Изменить
-            </Button>
-          </Modal.Footer>
         </Modal>
       </>
     );   

@@ -17,8 +17,10 @@ export default class NamesListItems extends Component {
             this.setState({ persons: res.data });
         })
     }
-    onDelete() {
-        console.log('del');
+    onDelete = e => {
+        console.log(e);
+        axios.delete(`http://localhost:3004/names/${e}`)
+        window.location.reload(false);
     }
 
     render() {
@@ -28,7 +30,7 @@ export default class NamesListItems extends Component {
                 <td>{ persons.lastName }</td>
                 <td>
                     <ButtonGroup className='mr-2'>
-                        <Button onClick={this.onDelete}>Удалить</Button>
+                        <Button onClick={ () => this.onDelete(persons.id) }>Удалить</Button>
                         <EditWindow fstName = {persons.firstName} lstName = {persons.lastName}/>
                     </ButtonGroup>
                 </td>

@@ -3,7 +3,7 @@ import { Button, Modal } from 'react-bootstrap';
 import EditModal from '../edit-modal';
 
 
-const EditWindow = (id) => {
+const EditWindow = ({id}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

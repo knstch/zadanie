@@ -7,7 +7,7 @@ export default class EditModal extends Component {
       firstName: '',
       lastName: ''
   }
-  constructor (id) {
+  constructor ({id}) {
       super();
       this.id = id;
   }
@@ -21,7 +21,7 @@ export default class EditModal extends Component {
   }
 
   handleSubmit = e => {
-    axios.post(`http://localhost:3004/names/${this.id}`, { firstName: this.state.firstName, lastName: this.state.lastName })
+    axios.patch(`http://localhost:3004/names/${this.id}`, { firstName: this.state.firstName, lastName: this.state.lastName })
     .then(res => { console.log(res);
                    console.log(res.data);
     })
